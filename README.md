@@ -257,5 +257,6 @@ All scientific framework design, data analysis, diagnostic methodology, and rese
 
 ---
 
-**Repository Status:** Manuscript submitted to Astronomy & Astrophysics · 80-galaxy validation complete · Reproducible diagnostic pipeline operational
+
+
 
