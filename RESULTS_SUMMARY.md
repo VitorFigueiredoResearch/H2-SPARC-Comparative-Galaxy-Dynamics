@@ -1,6 +1,6 @@
 # H2 Adaptive Kernel Framework — 80-Galaxy Validation Summary
 
-> **Status:** 80-galaxy validation complete · Manuscript submitted to A&A  
+> **Status:** 80-galaxy validation complete · Manuscript Submitted to The Astrophysical Journal 
 > **Date:** 2026-03-09  
 > **Sample:** 80 SPARC galaxies (canonical-baseline-compatible subset)
 
@@ -189,3 +189,4 @@ ORCID: [0009-0004-7358-4622](https://orcid.org/0009-0004-7358-4622)
 ---
 
 *Last updated: 2026-03-09*
+
