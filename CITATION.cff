@@ -1,23 +1,25 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite it as below."
-title: "H2 Adaptive Kernel Framework for Galaxy Rotation Curves"
+message: "If you use this repository, please cite it as below."
+title: "SPARC Comparative Galaxy Dynamics"
 type: software
 authors:
   - family-names: "Figueiredo"
-    given-names: "Vitor M. F. F."
+    given-names: "Vitor M. F."
     orcid: "https://orcid.org/0009-0004-7358-4622"
-doi: 10.5281/zenodo.18911959
-version: "v1.0.1-publication"
+doi: 10.5281/zenodo.18793232
+version: "v1.1.3-publication"
 date-released: 2026-03-06
-repository-code: "https://github.com/VitorFigueiredoResearch/H2-Adaptive-Kernel-Framework-for-Galaxy-Rotation-Curves"
+repository-code: "https://github.com/VitorFigueiredoResearch/SPARC-Comparative-Galaxy-Dynamics"
 license: "MIT"
 abstract: >
-  Adaptive nonlocal kernel framework for galaxy rotation curves, including
-  an 80-galaxy validation fleet, diagnostic pipeline, and reproducible
-  implementation archive.
+  Comparative SPARC galaxy-dynamics repository built around harmonized
+  inner-region scatter diagnostics across three bounded model
+  implementations: the H2 adaptive nonlocal kernel, NFW halo
+  perturbations, and MOND/RAR bounded sensitivity tests.
 keywords:
   - galaxy rotation curves
-  - nonlocal gravity
   - SPARC
-  - astrophysics
+  - galaxy dynamics
+  - dark matter haloes
+  - MOND
   - numerical methods
