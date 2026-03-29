@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
-title: "SPARC Comparative Galaxy Dynamics"
+title: "H2-Comparative Tests of Inner-Region Scatter Sensitivity in 74 SPARC Galaxies"
 type: software
 authors:
   - family-names: "Figueiredo"
