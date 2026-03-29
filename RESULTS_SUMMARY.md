@@ -59,7 +59,7 @@ RAR inner-region scatter shows no statistically significant correlation with bar
 
 H2 inner-region scatter remains near the numerical floor for all 30 explicitly archived galaxies. This null response persists across baryon-dominated, balanced, and DM-dominated systems, consistent with the quadrature suppression mechanism described in the H2 paper.
 
-The 44 Tier C galaxies have fleet-summary Δσ values of 0 km/s in velocity units but no archived log₁₀-dex output. Their inclusion in the plotted distribution would require a full H1-basis-pipeline rerun. They are documented but excluded from the comparative figure (see `comparative_analysis/referee_resolution/tier_c_audit_report.txt`).
+The 44 Tier C galaxies have fleet-summary Δσ values of 0 km/s in velocity units but no archived log₁₀-dex output. Their inclusion in the plotted distribution would require a full H1-basis-pipeline rerun. They are documented but excluded from the comparative figure (see `comparative_analysis/comparative_validation/tier_c_audit_report.txt`).
 
 ---
 
@@ -98,9 +98,9 @@ python scripts/Figures/generate_three_way_comparison.py --output three_way_compa
 All required input CSVs are present in `comparative_analysis/`. The script loads:
 - `comparative_analysis/nfw/h2_nfw_comparison_summary.csv` (74 rows)
 - `comparative_analysis/mond/h2_mond_comparison_summary.csv` (74 rows)
-- `comparative_analysis/referee_resolution/h2_full74_explicit_summary.csv` (filtered to 30 Tier A+B rows)
+- `comparative_analysis/comparative_validation/h2_full74_explicit_summary.csv` (filtered to 30 Tier A+B rows)
 
-See `comparative_analysis/referee_resolution/rar_spearman_result.txt` for the Spearman computation details.
+See `comparative_analysis/comparative_validation/rar_spearman_result.txt` for the Spearman computation details.
 
 ---
 
@@ -108,7 +108,7 @@ See `comparative_analysis/referee_resolution/rar_spearman_result.txt` for the Sp
 
 | Path | Contents |
 |------|----------|
-| `comparative_analysis/referee_resolution/` | H2 tier breakdown, Spearman results, Tier C audit |
+| `comparative_analysis/comparative_validation/` | H2 tier breakdown, Spearman results, Tier C audit |
 | `comparative_analysis/final_validation/` | Go/no-go memo, metric harmonization check, MOND defensibility check |
 | `comparative_analysis/metric_harmonization/` | Metric choice rationale, harmonized summary CSVs |
 | `comparative_analysis/nfw/` | NFW perturbation summary, diagnostic reports |
