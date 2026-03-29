@@ -29,14 +29,14 @@ Data sources
       - Used for 74-galaxy NFW data and for V_bar/V_NFW x-positions
   comparative_analysis/mond/h2_mond_comparison_summary.csv
       - RAR (MOND) mond_max_abs_ds for 74 galaxies
-  comparative_analysis/referee_resolution/h2_full74_explicit_summary.csv
+  comparative_analysis/comparative_validation/h2_full74_explicit_summary.csv
       - H2 abs_delta_sigma_dex for Tier A+B explicit subset (30 galaxies)
       - Tier C rows (44 galaxies, no_phase4_file) are excluded from all plots
 
 The same six galaxies excluded in the paper (F567-2, NGC4389, NGC6789,
 UGC00634, UGC05999, UGC09992) are already absent from these files.
 
-Spearman results (from referee_resolution/rar_spearman_result.txt)
+Spearman results (from comparative_validation/rar_spearman_result.txt)
 ------------------------------------------------------------------
   NFW: ρ = −0.899,  p = 1.8×10⁻²⁷,  N = 74  (strong anti-correlation)
   RAR: ρ = +0.049,  p = 0.681,        N = 74  (null — not significant)
@@ -86,7 +86,7 @@ MOND_CSV = os.path.join(
 )
 H2_EXPLICIT_CSV = os.path.join(
     REPO_ROOT,
-    'comparative_analysis', 'referee_resolution', 'h2_full74_explicit_summary.csv'
+    'comparative_analysis', 'comparative_validation', 'h2_full74_explicit_summary.csv'
 )
 
 # Default output: paper folder
@@ -242,7 +242,7 @@ def make_figure(merged74, h2_df, output_path):
     ax_scatter.set_ylim(-0.005, 0.130)
     ax_scatter.set_xlim(0.20, 3.40)
 
-    # Spearman annotations (validated; from referee_resolution/rar_spearman_result.txt)
+    # Spearman annotations (validated; from comparative_validation/rar_spearman_result.txt)
     ax_scatter.annotate(
         r'NFW: $\rho = -0.899$',
         xy=(3.30, 0.118), fontsize=5.8,
