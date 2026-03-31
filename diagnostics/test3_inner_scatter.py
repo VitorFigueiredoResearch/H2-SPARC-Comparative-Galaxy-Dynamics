@@ -1,4 +1,39 @@
 # diagnostics/test3_inner_scatter.py
+#
+# ===========================================================================
+# WARNING: LEGACY INTERNAL DIAGNOSTIC — NOT THE AUTHORITATIVE METRIC PATH
+# ===========================================================================
+#
+# This script is a legacy internal diagnostic retained for development
+# traceability. It is NOT the authoritative path for the manuscript's
+# headline metric results.
+#
+# KNOWN ISSUE — V_total column-priority bug:
+#   The get_vtotal() helper below searches for velocity columns in the order:
+#     ["V_total", "V_total_H1", "Vtot", "V_model"]
+#   When applied to an H2 output CSV that contains BOTH V_total_H1 and
+#   V_total_H2, this function will resolve to V_total_H1 (the H1 reference
+#   velocity stored in the H2 output file), not V_total_H2. The result is
+#   that sigma_H2 tracks sigma_H1 by construction and |delta_sigma| ≈ 0
+#   for all galaxies — which does not reflect the actual H2 adaptive result.
+#
+# AUTHORITATIVE PATH:
+#   comparative_analysis/comparative_validation/compute_h2_full74.py
+#   This script explicitly loads df['V_total_H2'] by name and is the
+#   source of the validated 74-galaxy combined metric results reported
+#   in the manuscript.
+#
+# EXTERNAL REPRODUCIBILITY:
+#   For external metric verification, use the standalone utility at:
+#   tools/h2_diagnostic_tool.py
+#   This tool requires pre-computed H1 and H2 model velocities supplied
+#   in the documented CSV format. See tools/README.md.
+#
+# USE WITH CAUTION. Results from this script should not be cited as
+# authoritative without first verifying the V_total column assignment
+# matches the intended model (H1 vs H2) in the input CSV.
+# ===========================================================================
+
 import argparse
 from pathlib import Path
 
