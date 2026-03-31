@@ -1,0 +1,2 @@
+status,status_reason,n_total,n_inner,R_max_kpc,R_cut_kpc,inner_frac,sigma_H1_dex,sigma_H2_dex,delta_sigma_dex,abs_delta_sigma_dex,manuscript_anchor_74gal_median_dex
+OK,Metric computed successfully.,43,31,44.08,22.04,0.5,0.5078717367229928,0.5105025010777785,0.0026307643547857085,0.0026307643547857085,0.000478
