@@ -1,5 +1,8 @@
 # SPARC-Comparative-Galaxy-Dynamics
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18793232.svg)](https://doi.org/10.5281/zenodo.18793232)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19361026.svg)](https://doi.org/10.5281/zenodo.19361026)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-blue.svg)]()
+[![Status](https://img.shields.io/badge/Status-MNRAS%20submitted-informational.svg)]()
 
 Comparative galaxy-dynamics repository built around the SPARC database, with harmonized inner-region scatter diagnostics across three bounded model implementations:
 
