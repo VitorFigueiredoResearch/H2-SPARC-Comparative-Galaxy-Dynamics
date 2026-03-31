@@ -34,9 +34,35 @@
 	\maketitle
 	
 \begin{abstract}
-	We present a comparative analysis of inner-region scatter sensitivity across three galaxy rotation-curve implementations using a common sample of 74 galaxies from the SPARC database. The comparison is performed on a harmonised basis, adopting the same inner-region definition ($R < 0.5\,R_{\max}$), the same operational scatter metric (log$_{10}$-RMS residuals in dex), and bounded perturbation tests around published or archived baseline solutions. The three cases considered are Navarro--Frenk--White (NFW) halo models, the adopted radial acceleration relation (RAR) implementation, and a fixed-parameter non-local kernel implementation (H2).
+	We present a comparative analysis of inner-region scatter sensitivity 
+	across three galaxy rotation-curve implementations using a common sample 
+	of 74 galaxies from the SPARC database. The comparison is performed on a 
+	harmonised basis, adopting the same inner-region definition 
+	($R < 0.5\,R_{\max}$), the same operational scatter metric 
+	(log$_{10}$-RMS residuals in dex), and bounded perturbation tests around 
+	published or archived baseline solutions. The three cases considered are 
+	Navarro--Frenk--White (NFW) halo models, the adopted radial acceleration 
+	relation (RAR) implementation, and a fixed-parameter non-local kernel 
+	implementation (H2).
 	
-	A clear ranked pattern emerges. For the subset of 30 galaxies with explicit harmonised H2 archived outputs, the H2 implementation shows a near-neutral response, with median $|\Delta\sigma| = 0.000860$~dex. The adopted RAR implementation shows intermediate sensitivity, with median $\max |\Delta\sigma| = 0.0321$~dex and no statistically significant monotonic correlation with the chosen baryonic-dominance proxy ($\rho = +0.0485$, $p = 0.681$, $N = 74$). The NFW baseline shows the largest response, with median $\max |\Delta\sigma| = 0.0548$~dex. In the NFW case, the sensitivity is strongly anti-correlated with the median inner-region ratio $V_{\mathrm{bar}}/V_{\mathrm{NFW}}$ ($\rho = -0.899$, $p = 1.8 \times 10^{-27}$, $N = 74$). These results show that, under a common inner-region diagnostic, bounded perturbations produce substantially different scatter responses across the tested implementations, supporting the use of scatter sensitivity as a comparative diagnostic for galaxy rotation-curve models.
+	A clear ranked pattern emerges. The H2 implementation shows a 
+	near-neutral response, with median 
+	$|\Delta\sigma|_{\mathrm{H2}} = 0.000478$~dex on the full 74-galaxy 
+	common sample. The adopted RAR implementation shows intermediate 
+	sensitivity, with median $\max |\Delta\sigma|_{\mathrm{RAR}} = 0.0321$~dex 
+	and no statistically significant monotonic correlation with the chosen 
+	baryonic-dominance proxy ($\rho = +0.0485$, $p = 0.681$, $N = 74$). The 
+	NFW baseline shows the largest response, with median 
+	$\max |\Delta\sigma|_{\mathrm{NFW}} = 0.0548$~dex and a strong 
+	anti-correlation with baryonic dominance 
+	($\rho = -0.899$, $p = 1.8 \times 10^{-27}$, $N = 74$). These results 
+	show that, under a common inner-region diagnostic, bounded perturbations 
+	produce substantially different scatter responses across the tested 
+	implementations, supporting the use of scatter sensitivity as a 
+	comparative diagnostic for galaxy rotation-curve models. The results are 
+	presented as a comparative diagnostic of implementation sensitivity 
+	under bounded perturbations, rather than a fundamental test of the 
+	underlying physical theories.
 \end{abstract}
 	
 	\begin{keywords}
@@ -234,15 +260,20 @@ perturbations are applied to the quantities specified in the comparison
 catalogue and are interpreted strictly as bounded sensitivity tests
 within that implementation. For H2, the perturbation protocol is fixed
 by the bounded adaptive procedure defined in the archived analysis.
-While the specific perturbation protocols differ in their operational 
-details, they are designed to probe comparable levels of bounded 
-parameter variation relative to each implementation's baseline solution.
+While the specific perturbation protocols differ in
+their operational details, they are not intended to be dynamically
+equivalent across implementations. Different model architectures do
+not admit a unique, model-independent measure of perturbation
+amplitude. The objective is therefore not to impose identical
+perturbation effort, but to evaluate how the same inner-region scatter
+metric responds under bounded, finite variations defined within the
+operational limits of each implementation’s baseline solution.
 
 These bounded perturbations are not intended to represent exhaustive
 re-optimisation of each framework. Their purpose is narrower: to test
 how strongly the same inner-region scatter metric responds to
 controlled, finite variations in each implementation under otherwise
-matched conditions.
+matched observational conditions.
 
 \section{Data and sample selection}
 \label{sec:data}
@@ -534,12 +565,19 @@ diagnostic, but less sensitive than the NFW baseline
 \begin{figure}
 	\includegraphics[width=\columnwidth]{rar_sensitivity.png}
 	\caption{Inner-region scatter sensitivity in the adopted RAR
-		implementation for the 74-galaxy comparison sample. The distribution
-		of $\max\,|\Delta\sigma|_{\mathrm{RAR}}$ across the common sample
-		shows an intermediate sensitivity level, with median
-		$\max\,|\Delta\sigma|_{\mathrm{RAR}} = 0.0321$ dex. This places the
-		adopted RAR implementation between the near-neutral H2 response and
-		the NFW baseline under the same operational inner-region diagnostic.}
+		implementation for the 74-galaxy comparison sample.
+		\textit{Top panel:} Maximum absolute scatter change
+		$\max|\Delta\sigma|_{\mathrm{RAR}}$ (dex) as a function of the
+		inner-region baryonic-dominance proxy
+		$V_{\mathrm{bar}}/V_{\mathrm{RAR}}$, with points coloured by
+		regime classification.
+		\textit{Bottom panel:} Distribution of
+		$\max|\Delta\sigma|_{\mathrm{RAR}}$ across the common sample, shown
+		with NFW and H2 reference levels for comparison. The adopted RAR
+		implementation shows an intermediate sensitivity level, with median
+		$\max|\Delta\sigma|_{\mathrm{RAR}} = 0.0321$ dex, placing it between
+		the near-neutral H2 response and the NFW baseline under the same
+		operational inner-region diagnostic.}
 	\label{fig:rar_sensitivity}
 \end{figure}
 
@@ -550,29 +588,25 @@ diagnostic, but less sensitive than the NFW baseline
 \subsection{Operational result}
 \label{subsec:h2_results}
 
-For the subset of 30 galaxies with explicit archived phase4 H2 outputs,
-the fixed-parameter kernel implementation shows a near-neutral
-inner-region response in the harmonised metric. On this explicit subset,
-the median absolute response is
-$|\Delta \sigma|_{\mathrm{H2}} = 0.000860$~dex, with a maximum value of
-0.005323~dex. These values remain well below the corresponding response
-levels measured for the RAR and NFW implementations.
+The fixed-parameter H2 kernel implementation shows a near-neutral
+inner-region response in the harmonised metric. The median absolute
+response is $|\Delta \sigma|_{\mathrm{H2}} = 0.000478$~dex, with a
+maximum value of 0.005323~dex. These values remain well below the
+corresponding response levels measured for the RAR and NFW
+implementations.
 
-The remaining 44 galaxies in the common 74-galaxy comparison framework
-do not have archived phase4 H2 outputs in the present repository and
-are therefore not assigned new explicit H2 response values here. These
-systems are not inner-coverage failures; rather, they are no-archive
-cases for the harmonised log$_{10}$-dex phase4 output required by the
-present comparison. The explicit 30-galaxy H2 subset should therefore
-be interpreted as an archived reconstruction subset rather than a full
-74-galaxy explicit sample.
+The H2 inner-region scatter response was computed using the explicit
+$V_{\mathrm{total,H2}}$ output for all 74 galaxies in the common
+comparison set.
 
 This near-neutral behaviour distinguishes the H2 case from both
-comparison classes considered above. In the present section we do not
-interpret that difference further. The purpose of the H2 result here is
-to provide the third element of the comparative framework under the
-same inner-region metric, radial cut, and operational definitions used
-elsewhere in the paper.
+comparison classes considered above. It should not be interpreted here
+as evidence that the underlying implementation lacks baseline fit
+content. Rather, the present diagnostic isolates how the fixed-parameter
+implementation responds to the adopted bounded perturbation protocol.
+The purpose of the H2 result here is to provide the third element of
+the comparative framework under the same inner-region metric, radial
+cut, and operational definitions used elsewhere in the paper.
 
 
 \section{Comparative analysis}
@@ -583,17 +617,37 @@ elsewhere in the paper.
 
 The common comparison set contains 74 galaxies evaluated under the same inner-region definition and the same operational scatter metric. This permits a direct comparison of bounded inner-region scatter sensitivity across the three implementations considered here.
 
-A clear ranked pattern emerges. The H2 fixed-parameter kernel 
-implementation shows the smallest response; for a subset of 30 
-galaxies with explicit numerical verification, the median absolute 
-response is 0.000860~dex, remaining near-neutral in the adopted 
-diagnostic. The adopted RAR implementation shows an intermediate response, with median $\max |\Delta \sigma| = 0.0321$~dex. The NFW analysis shows the largest sensitivity, with median $\max |\Delta \sigma|_{\mathrm{NFW}} = 0.0548$~dex. 
+A clear ranked pattern emerges. The H2 fixed-parameter kernel implementation shows the smallest response, with median absolute response $|\Delta \sigma|_{\mathrm{H2}} = 0.000478$~dex. The adopted RAR implementation shows an intermediate response, with median $\max |\Delta \sigma|_{\mathrm{RAR}} = 0.0321$~dex. The NFW analysis shows the largest sensitivity, with median $\max |\Delta \sigma|_{\mathrm{NFW}} = 0.0548$~dex.
 
 The resulting hierarchy of inner-region scatter sensitivity is clearly defined as:
 \begin{equation}
-	|\Delta\sigma|_{\mathrm{H2}} \ll |\Delta\sigma_{\mathrm{RAR}}| < |\Delta\sigma_{\mathrm{NFW}}|
+	|\Delta\sigma|_{\mathrm{H2}} \ll |\Delta\sigma|_{\mathrm{RAR}} < |\Delta\sigma|_{\mathrm{NFW}}.
 \end{equation}
-where the H2 response ($0.000860$~dex) is approximately two orders of magnitude smaller than the NFW baseline ($0.0548$~dex) when measured in the same $\log_{10}$-RMS residual metric and on the same galaxy set.
+Table~\ref{tab:summary} summarises the comparative statistics for all three implementations.
+\begin{table}
+	\caption{Summary of inner-region scatter sensitivity across the three
+		tested implementations on the common 74-galaxy comparison sample.}
+	\label{tab:summary}
+	\centering
+	\scriptsize
+	\setlength{\tabcolsep}{3pt}
+	\begin{tabular}{p{0.27\columnwidth}p{0.17\columnwidth}p{0.20\columnwidth}p{0.18\columnwidth}}
+		\toprule
+		Property & NFW & RAR & H2 \\
+		\midrule
+		$N_{\mathrm{galaxies}}$ & 74 & 74 & 74 \\
+		Median $\max|\Delta\sigma|$ (dex) & 0.0548 & 0.0321 & 0.000478 \\
+		Spearman $\rho$ & $-0.899$ & $+0.0485$ & --- \\
+		Spearman $p$-value & $1.8\times10^{-27}$ & $0.681$ & --- \\
+		Correlation proxy & $V_{\mathrm{bar}}/V_{\mathrm{NFW}}$ & internal baryonic proxy & --- \\
+		Perturbation parameters & $V_{200}$, $c_{200}$ & $g_{\dagger}$, $\Upsilon_{\mathrm{disc}}$ & fixed-parameter kernel \\
+		\bottomrule
+	\end{tabular}
+	
+	\vspace{2pt}
+	\parbox{\columnwidth}{\footnotesize \textit{Note.} All values were computed using the same inner-region definition ($R < 0.5\,R_{\max}$) and the same log$_{10}$-RMS residual metric (dex). The H2 correlation is not reported because the near-neutral response does not provide a meaningful dynamic range for rank-correlation analysis.}
+\end{table}
+The H2 response is therefore more than an order of magnitude below the RAR level and approximately two orders of magnitude below the NFW baseline when measured in the same $\log_{10}$-RMS residual metric and on the same 74-galaxy comparison set.
 
 This ranking does not by itself identify a preferred physical theory. Rather, it shows that bounded perturbations applied within these three tested implementations do not produce identical inner-region behaviour. The H2 case remains near-neutral, the adopted RAR implementation is more responsive, and the NFW baseline is more responsive still. The comparative result is therefore one of differing structural sensitivity, not simple equivalence under a common perturbation test.
 
@@ -602,89 +656,38 @@ Figure~\ref{fig:three_way_comparison} summarises this ranked pattern graphically
 \subsection{Structural dependencies}
 \label{subsec:structural_dependencies}
 
-Although the three implementations differ in overall sensitivity
-amplitude, they also differ in how that sensitivity tracks the local
-balance between baryonic and non-baryonic or non-Newtonian
-contributions. The clearest example is provided by the NFW case, for
-which the inner-region scatter response is strongly anti-correlated with
-the median inner-region ratio $V_{\mathrm{bar}}/V_{\mathrm{NFW}}$.
-Galaxies with stronger baryonic dominance exhibit smaller
-$\max |\Delta \sigma|_{\mathrm{NFW}}$, whereas systems with a more
-comparable halo contribution exhibit larger sensitivity. This indicates
-that the leverage of bounded halo perturbations is not uniform across
-the sample, but depends strongly on the relative importance of the
-additional component within the adopted radial domain.
+Although the three implementations differ in overall sensitivity amplitude, they also differ in how that sensitivity tracks the local balance between baryonic and non-baryonic or non-Newtonian contributions. The clearest example is provided by the NFW case, for which the inner-region scatter response is strongly anti-correlated with the median inner-region ratio $V_{\mathrm{bar}}/V_{\mathrm{NFW}}$. Galaxies with stronger baryonic dominance exhibit smaller $\max |\Delta \sigma|_{\mathrm{NFW}}$, whereas systems with a more comparable halo contribution exhibit larger sensitivity. This indicates that the leverage of bounded halo perturbations is not uniform across the sample, but depends strongly on the relative importance of the additional component within the adopted radial domain.
 
-The adopted RAR implementation displays a weaker overall sensitivity than
-NFW and does not show the same degree of regime separation in the
-present diagnostic. Its bounded perturbation response remains
-systematically above the near-neutral H2 case, but well below the NFW
-baseline. Within the adopted RAR implementation, this suggests the
-additional acceleration component is more structurally coupled to the
-local baryonic distribution than in the perturbed NFW case, resulting
-in a more constrained scatter response.
+The adopted RAR implementation displays a weaker overall sensitivity than NFW and does not show the same degree of regime separation in the present diagnostic. Its bounded perturbation response remains systematically above the near-neutral H2 case, but well below the NFW baseline. Within the adopted RAR implementation, the bounded scatter response is more constrained than in the perturbed NFW case, although no comparably strong monotonic trend is recovered in the present diagnostic.
 
-The H2 implementation remains distinct in that its bounded adaptive response stays close to zero for the explicit 30-galaxy archived subset within the 74-galaxy comparison framework.
-This does not imply that H2 is free of all structural limitations, nor
-that the three implementations can be reduced to a single common
-mechanism. It does show, however, that the degree of inner-region
-scatter sensitivity differs substantially across the tested
-implementations even when the metric, radial cut, and comparison set are
-held fixed.
+The H2 implementation remains distinct in that its bounded inner-region scatter response stays close to zero across the full 74-galaxy comparison set. This does not imply that H2 is free of all structural limitations, nor that the three implementations can be reduced to a single common mechanism. It does show, however, that the degree of inner-region scatter sensitivity differs substantially across the tested implementations even when the metric, radial cut, and comparison set are held fixed.
 
-Taken together, these results support a comparative structural reading
-of the inner-region diagnostic. Bounded perturbations tend to have more
-limited leverage where the additional component is less important, but
-the strength of that limitation differs substantially between the tested
-implementations. The NFW case provides the clearest baryonic-dominance
-trend, the adopted RAR implementation occupies an intermediate position,
-and the H2 implementation remains near-neutral under the same
-operational test.
+Taken together, these results support a comparative structural reading of the inner-region diagnostic. Bounded perturbations tend to have more limited leverage where the additional component is less important, but the strength of that limitation differs substantially between the tested implementations. The NFW case provides the clearest baryonic-dominance trend, the adopted RAR implementation occupies an intermediate position, and the H2 implementation remains near-neutral under the same operational test.
 
 \begin{figure}
 	\includegraphics[width=0.95\columnwidth]{three_way_comparison.png}
-	\caption{Three-way comparison of inner-region scatter sensitivity for
-		the 74-galaxy common sample.
-		\textit{Panel (a):} Maximum absolute scatter change $\max|\Delta\sigma|$
-		(dex) as a function of an inner-region baryonic-dominance proxy. For
-		visual comparison, the horizontal placement is shown using the median
-		inner-region ratio $V_{\rm bar}/V_{\rm NFW}$, with NFW points shown as
-		orange circles ($N=74$), the adopted RAR implementation as blue diamonds
-		($N=74$), and H2 as green squares for the 30 galaxies with archived
-		phase\,4 diagnostic outputs (Tier A+B explicit subset). The remaining 44
-		galaxies with no archived log$_{10}$-dex output are not plotted. Dashed
-		and dotted horizontal lines indicate implementation medians. The orange
-		solid line is a linear trend guide for the NFW distribution. The NFW
-		Spearman rank correlation is computed with the same
-		$V_{\rm bar}/V_{\rm NFW}$ proxy ($\rho=-0.899$, $p<10^{-25}$, $N=74$),
-		whereas the adopted RAR implementation shows no statistically significant
-		monotonic correlation when evaluated against its own internal
-		baryonic-dominance proxy ($\rho=+0.049$, $p=0.68$, $N=74$).
-		\textit{Panel (b):} Box plots of the $\max|\Delta\sigma|$ distributions
-		for each implementation, showing median (white line), interquartile
-		range (box), and 1.5\,IQR whiskers. The H2 box reflects the 30 explicit
-		archived galaxies only (median $|\Delta\sigma| = 0.00086$ dex); NFW and
-		RAR boxes reflect all 74 comparison galaxies. The ranked sensitivity
-		pattern H2\,$<$\,RAR\,$<$\,NFW is evident across all summary statistics.}
+	\caption{Three-way comparison of inner-region scatter sensitivity for the 74-galaxy common sample.
+		\textit{Panel (a):} Maximum absolute scatter change $\max|\Delta\sigma|$ (dex) as a function of an inner-region baryonic-dominance proxy. For visual comparison, the horizontal placement is shown using the median inner-region ratio $V_{\rm bar}/V_{\rm NFW}$, with NFW points shown as orange circles ($N=74$), the adopted RAR implementation as blue diamonds ($N=74$), and H2 as green squares ($N=74$). Dashed and dotted horizontal lines indicate implementation medians. The orange solid line is a linear trend guide for the NFW distribution. The NFW Spearman rank correlation is computed with the same $V_{\rm bar}/V_{\rm NFW}$ proxy ($\rho=-0.899$, $p=1.8\times10^{-27}$, $N=74$), whereas the adopted RAR implementation shows no statistically significant monotonic correlation when evaluated against its own internal baryonic-dominance proxy ($\rho=+0.0485$, $p=0.681$, $N=74$).
+		\textit{Panel (b):} Box plots of the $\max|\Delta\sigma|$ distributions for each implementation, showing median (white line), interquartile range (box), and 1.5\,IQR whiskers. All boxes reflect the full 74-galaxy sample. The ranked sensitivity pattern H2\,$<$\,RAR\,$<$\,NFW is evident across all summary statistics.}
 	\label{fig:three_way_comparison}
 \end{figure}
-	
+
 \section{Discussion}
 \label{sec:discussion}
-
 \subsection{Structural interpretation}
 \label{subsec:structural_interpretation}
 
 The comparative analysis shows that bounded inner-region scatter
 sensitivity is not identical across the tested implementations. On the
-common 74-galaxy basis used for the NFW and adopted RAR analyses, the
-two external comparison classes exhibit clearly different response
-patterns, with the NFW baseline showing the largest bounded sensitivity
-and the adopted RAR implementation showing a weaker intermediate
-response. For the subset of 30 galaxies with explicit archived H2 \citep{FigueiredoH2zenodo2026} phase4
-outputs in the harmonised metric, the H2 implementation shows a
-near-neutral response that remains substantially below both comparison
-classes. For context, typical observational uncertainties in SPARC rotation curve measurements correspond to scatter contributions of order 0.05–0.10 dex, placing the NFW bounded response within the range of observational noise while the H2 response remains well below it.
+common 74-galaxy basis used throughout the comparison, the three
+implementations exhibit clearly different response patterns, with the
+NFW baseline showing the largest bounded sensitivity, the adopted RAR
+implementation showing a weaker intermediate response, and the H2
+implementation remaining near-neutral. For context, typical observational uncertainties in SPARC rotation-curve
+measurements correspond to scatter contributions of order 0.05--0.10 dex.
+The NFW bounded response is therefore of observationally relevant scale,
+whereas the H2 response remains substantially smaller under the adopted
+bounded perturbation protocol.
 
 The NFW analysis provides the clearest evidence for a structural
 dependence on baryonic dominance. Its strong anti-correlation between
@@ -710,28 +713,19 @@ of the diagnostic. Bounded perturbations tend to have reduced leverage
 in the inner regions, but the strength and sample dependence of that
 reduction differ substantially across the tested implementations. The
 NFW case provides the clearest baryonic-dominance trend, the adopted
-RAR implementation occupies an intermediate position, and the explicit
-H2 subset remains near-neutral under the same operational test.
+RAR implementation occupies an intermediate position, and the H2
+implementation remains near-neutral under the same operational test.
 
 \subsection{Role of parameter constraints}
 \label{subsec:parameter_constraints}
-
-A natural alternative interpretation is that the observed ranking
-reflects differences in parameter freedom rather than a structural
-dependence on baryonic dominance. On this reading, the H2
-implementation would appear most neutral simply because its adaptive
-response is more tightly constrained, whereas the NFW and RAR cases
-permit greater effective leverage through their perturbed quantities.
 
 This possibility cannot be dismissed entirely, and it should be treated
 as a real limitation of the comparison. The H2 implementation is indeed
 more tightly bounded than the NFW and RAR perturbation sets in a
 practical sense, and that stronger freezing may contribute to its
-extreme neutrality. In addition, the explicit H2 subset is limited to
-30 archived phase4 reconstructions and underrepresents
-dark-matter-dominated systems. The present analysis therefore does not
-justify a claim that the three implementations differ only because of
-their underlying physical principles.
+extreme neutrality. The present analysis therefore does not justify a
+claim that the three implementations differ only because of their
+underlying physical principles.
 
 At the same time, the NFW result shows that the comparative pattern is
 not reducible to parameter counting alone. The observed variance within
@@ -739,11 +733,21 @@ the NFW class itself---where the number of perturbed quantities remains
 constant---demonstrates that the inner-region scatter sensitivity
 varies strongly across the sample and tracks the degree of baryonic
 dominance. This indicates that local structural conditions matter in
-addition to parameter freedom. The present results therefore support a
-more limited conclusion: the observed ranking does not appear to be
-explained solely by parameter count, and is consistent with a
-dependence on how strongly the additional component contributes within
-the inner region.
+addition to parameter freedom.
+
+This point should be interpreted carefully. The present comparison does
+not establish a model-independent unit of perturbation amplitude across
+the three implementations, and the resulting hierarchy should not be
+read as a universal ranking of physical rigidity. The more limited
+result is that, under bounded finite variations defined within each
+implementation and evaluated with the same inner-region scatter metric,
+the tested models exhibit measurably different response scales. In that
+sense, the comparison is diagnostic rather than theory-adjudicating.
+
+The present result does not imply that a near-neutral scatter response
+is intrinsically or theoretically superior. It shows only that the tested
+implementations exhibit measurably different bounded sensitivities
+under the adopted inner-region diagnostic.
 
 \subsection{Interpretation framework and limits}
 \label{subsec:interpretation_limits}
@@ -755,9 +759,8 @@ halo-based baseline that is widely used in galaxy rotation-curve
 modelling, but it does not represent the full scope of $\Lambda$CDM
 phenomenology at galaxy scales. Likewise, the RAR analysis is confined
 to the adopted implementation and perturbation protocol used here, and
-should not be taken as an exhaustive test of MOND theory space. The H2
-case is similarly restricted to the archived fixed-parameter kernel
-implementation carried into the present comparison.
+should not be taken as an exhaustive test of MOND theory space. The H2 case is similarly restricted to the fixed-parameter
+kernel implementation carried into the present comparison.
 
 These limits are important for interpreting the comparative result
 properly. The present paper does not establish a hierarchy that extends
@@ -768,80 +771,22 @@ can exhibit clearly different scatter-sensitivity behaviour, and that
 those differences may depend both on local baryonic dominance and on
 the way the additional component enters the model construction.
 
-\subsection{Implications for future tests}
-\label{subsec:future_tests}
-
-The comparative framework developed here can be extended in several
-directions. On the halo side, it could be applied to alternative
-dark-matter profiles or feedback-modified halo prescriptions. On the
-modified-gravity side, it could be extended to other interpolation or
-effective-acceleration implementations. More generally, the same
-diagnostic could be applied to additional bounded rotation-curve models
-provided that they can be evaluated on the same observational basis and
-under the same inner-region metric.
-
-The present results therefore motivate future comparative work, but they
-already provide a useful benchmark: under the adopted diagnostic, the
-inner-region scatter response is not uniform across the tested model
-classes, and the degree of bounded sensitivity can itself be treated as a
-comparative property of the implementations considered here.
 \section{Conclusions}
 \label{sec:conclusions}
 
-We have presented a comparative analysis of inner-region scatter
-sensitivity across three distinct galaxy rotation-curve
-implementations using a common sample of 74 galaxies from the SPARC
-database. By adopting the same inner-region definition
-($R < 0.5\,R_{\max}$), the same operational scatter metric
-(log$_{10}$-RMS residuals in dex), and a common bounded-perturbation
-framework, we have placed the NFW, RAR, and H2 implementations on a
-directly comparable diagnostic basis.
+We have presented a comparative analysis of inner-region scatter sensitivity across three distinct galaxy rotation-curve implementations using a common sample of 74 galaxies from the SPARC database. By adopting the same inner-region definition ($R < 0.5\,R_{\max}$), the same operational scatter metric (log$_{10}$-RMS residuals in dex), and a common bounded-perturbation framework, we have placed the NFW, RAR, and H2 implementations on a directly comparable diagnostic basis.
 
-A clear ranked pattern emerges from this comparison. For the subset of
-30 galaxies with explicit harmonised H2 reconstructions, the
-fixed-parameter kernel implementation shows a near-neutral response,
-with median $|\Delta \sigma| \approx 0.000860$~dex. The adopted RAR
-implementation occupies an intermediate position, with median
-$\max |\Delta \sigma| = 0.0321$~dex, while the NFW baseline shows the
-largest bounded sensitivity, with median
-$\max |\Delta \sigma|_{\mathrm{NFW}} = 0.0548$~dex. Although the
-explicit H2 subset is smaller than the full 74-galaxy comparison set
-used for NFW and RAR, the measured H2 response remains more than an
-order of magnitude below the RAR level and substantially below the NFW
-baseline.
+A clear ranked pattern emerges from this comparison. The fixed-parameter H2 kernel implementation shows a near-neutral response, with median $|\Delta \sigma|_{\mathrm{H2}} = 0.000478$~dex. The adopted RAR implementation occupies an intermediate position, with median $\max |\Delta \sigma|_{\mathrm{RAR}} = 0.0321$~dex, while the NFW baseline shows the largest bounded sensitivity, with median $\max |\Delta \sigma|_{\mathrm{NFW}} = 0.0548$~dex. The resulting ordering,
+\[
+|\Delta \sigma|_{\mathrm{H2}} \ll |\Delta \sigma|_{\mathrm{RAR}} < |\Delta \sigma|_{\mathrm{NFW}},
+\]
+shows that the three tested implementations do not produce equivalent inner-region scatter responses under the same operational diagnostic.
 
-The NFW case also shows that inner-region sensitivity is strongly
-modulated by local baryonic dominance. The anti-correlation
-($\rho = -0.899$) between
-$\max |\Delta \sigma|_{\mathrm{NFW}}$ and the median inner-region ratio
-$V_{\mathrm{bar}}/V_{\mathrm{NFW}}$ indicates that bounded halo
-perturbations have progressively less leverage where the baryonic
-contribution is more important. By contrast, the adopted RAR
-implementation shows no statistically significant monotonic correlation
-with the corresponding baryonic-dominance proxy
-($\rho = +0.0485$, $p = 0.681$, $N = 74$), reinforcing the view that
-the three tested implementations do not share the same structural
-response under the adopted diagnostic.
+The NFW case also shows that inner-region sensitivity is strongly modulated by local baryonic dominance. The anti-correlation ($\rho = -0.899$, $p = 1.8\times10^{-27}$, $N=74$) between $\max |\Delta \sigma|_{\mathrm{NFW}}$ and the median inner-region ratio $V_{\mathrm{bar}}/V_{\mathrm{NFW}}$ indicates that bounded halo perturbations have progressively less leverage where the baryonic contribution is more important. By contrast, the adopted RAR implementation shows no statistically significant monotonic correlation when evaluated against its own internal baryonic-dominance proxy ($\rho = +0.0485$, $p = 0.681$, $N = 74$). The three tested implementations therefore differ not only in overall response amplitude but also in their structural dependence within the adopted diagnostic.
 
-The comparative ranking does not appear to be explained solely by
-parameter freedom. Although the H2 implementation is more tightly
-bounded than the NFW and RAR perturbation sets, the large variation
-within the NFW class itself shows that parameter count alone is not
-sufficient to account for the observed pattern. The results are instead
-consistent with a more limited conclusion: under the adopted
-diagnostic, the inner-region scatter response depends both on the local
-importance of the additional component and on the way that component is
-embedded within a given model implementation.
+These differences should not be taken to identify a preferred physical theory. The present result is narrower and comparative: under the same inner-region definition, metric, and bounded-perturbation test, the three implementations exhibit distinct levels of scatter sensitivity. In this sense, the comparison isolates a measurable structural difference in how each implementation responds to controlled perturbations within the inner rotation-curve domain.
 
-These conclusions should be interpreted within the scope of the tested
-implementations only. The NFW baseline does not represent all
-$\Lambda$CDM halo phenomenology, the adopted RAR implementation does
-not exhaust MOND theory space, and the H2 case is restricted to the
-archived fixed-parameter kernel analysed here. Within those limits, the
-present work supports the use of inner-region scatter sensitivity as a
-comparative diagnostic for galaxy rotation-curve models and provides a
-reproducible benchmark for future bounded-perturbation studies.
-
+These conclusions should be interpreted within the scope of the tested implementations only. The NFW baseline does not represent all $\Lambda$CDM halo phenomenology, the adopted RAR implementation does not exhaust MOND theory space, and the H2 case is restricted to the fixed-parameter kernel implementation analysed here. Within those limits, the present work supports the use of inner-region scatter sensitivity as a comparative diagnostic for galaxy rotation-curve models and provides a reproducible benchmark for future bounded-perturbation studies.
 
 
 \section*{Acknowledgements}
