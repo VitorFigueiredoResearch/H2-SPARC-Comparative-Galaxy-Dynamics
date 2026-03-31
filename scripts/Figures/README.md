@@ -51,3 +51,37 @@ From the repository root:
 ```bash
 python scripts/Figures/generate_three_way_comparison.py
 # Default output: paper/three_way_comparison.png
+
+Optional custom output path:
+
+python scripts/Figures/generate_three_way_comparison.py --output path/to/output.png
+Output
+
+three_way_comparison.png — main comparative figure for the manuscript,
+formatted for MNRAS single-column usage.
+
+Dependencies
+Python ≥ 3.9
+numpy
+matplotlib
+pandas
+Notes
+This script corresponds to the final manuscript state and supersedes
+earlier internal figure-generation routes based on partial H2 archive
+coverage.
+The plotted H2 values reflect the full 74-galaxy common comparison
+sample used in the final comparative analysis.
+For manuscript interpretation, see the final figure caption and
+discussion sections in the paper source.
+Citation
+
+If using this figure or script, cite:
+
+Figueiredo, V. M. F. (2026). Inner-Region Scatter Response to Bounded
+Perturbations: A Comparative Analysis of 74 SPARC Galaxies. MNRAS (submitted).
+
+Li, P., Lelli, F., McGaugh, S. S., & Schombert, J. M. (2020). A Comprehensive
+Catalog of Dark Matter Halo Models for SPARC Galaxies. ApJS, 247, 31.
+
+Lelli, F., McGaugh, S. S., & Schombert, J. M. (2016). SPARC: Mass Models
+for 175 Disk Galaxies. AJ, 152, 157.
